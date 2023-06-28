@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Irish Grover', cursive;
+
+}
+
+body {
+    background-image: url("../image/Design.gif");
+    background-size: 88vw;
+    background-repeat: no-repeat;
+    background-position: top;
+
+}
+
+.bg-chateau {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.drapeau {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 123px;
+    object-fit: cover;
+    filter: blur(3px);
+    border-style: inset;
+}
+
+.drapeau1 {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 123px;
+    object-fit: cover;
+    filter: blur(3px);
+    border-style: inset;
+}
+
+.btn-g {
+    clip-path: polygon(80% 4%, 47% 23%, 80% 39%);
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 25px;
+    background: red;
+    top: 14px;
+    left: -37px;
+    cursor: pointer;
+}
+
+.btn-g p {
+    position: absolute;
+    top: 32px;
+    left: 113px;
+}
+
+.btn-d {
+    clip-path: polygon(68% 45%, 36% 30%, 36% 68%);
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 25px;
+    background: red;
+    top: -41px;
+    right: -5px;
+    cursor: pointer;
+}
+
+.btn-d p {
+    padding-bottom: 12px;
+}
+
+.charles {
+    opacity: 0;
+    transition: 2s ease-in-out;
+    width: 40%;
+
+}
+
+.charles-center {
+    text-align: center;
+}
+
+.ferrari-arriere {
+    width: 97px;
+    position: absolute;
+    left: 279px;
+    bottom: 134px;
+    transform: rotate(22deg);
+}
+
+.ferrari-arriere:focus {
+    opacity: 0;
+    z-index: -3;
+    background-image: none;
+}
+
+.etoile-coupe-gauche {
+    width: 22px;
+    position: absolute;
+    left: 312px;
+    bottom: 148px;
+    z-index: -1;
+}
+
+.ferrari-arriere-active {
+    display: none;
+}
+
+.etoile-coupe-gauche-active {
+    top: 215px;
+    z-index: 2;
+    width: 39px;
+    left: 10px;
+    pointer-events: none;
+}
+
+.charles-active {
+    opacity: 1;
+    transition: 2s ease-in-out;
+
+}
+
+.ferrari-cote {
+    width: 157px;
+    position: absolute;
+    left: 554px;
+    bottom: 167px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ferrari-cote-active {
+    opacity: 1;
+}
+
+.cadre {
+    display: flex;
+}
+
+.question h1 {
+    margin-bottom: 20px;
+}
+
+li {
+    display: inline-block;
+    border: 1px solid black;
+    background-color: yellow;
+    padding: 9px 20px;
+    border-radius: 5px;
+    margin: 0 20px;
+}
+
+.question {
+    border-radius: 22px;
+    text-align: center;
+    padding: 20px;
+    DISPLAY: inline-block;
+    margin: auto;
+    background-color: red;
+    border: 2px solid;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.question-active {
+    opacity: 1;
+    transition: 3s ease-in-out;
+}
+
+
+.bonne-reponse-active {
+    opacity: 0;
+}
+
+.mauvaise-reponse-active {
+    opacity: 0;
+}
