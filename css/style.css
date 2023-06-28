@@ -11,7 +11,7 @@ body {
     background-size: 88vw;
     background-repeat: no-repeat;
     background-position: top;
-
+    width: 100vw;
 }
 
 .bg-chateau {
@@ -164,7 +164,7 @@ li {
     background-color: red;
     border: 2px solid;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 3s ease-in-out;
 }
 
 .question-active {
@@ -179,4 +179,16 @@ li {
 
 .mauvaise-reponse-active {
     opacity: 0;
+}
+
+.reponse {
+    cursor: pointer;
+}
+
+.fausse {
+    background-color: red;
+}
+
+.gg-question {
+    background-color: green;
 }

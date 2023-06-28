@@ -12,22 +12,6 @@ var charles = document.getElementsByClassName('charles');
 var ferraricote = document.getElementsByClassName('ferrari-cote')[0];
 var question = document.getElementsByClassName('question')[0];
 
-var reponses = document.getElementsByClassName('reponse');
-
-// Parcourir les réponses et ajouter un écouteur de clic à chacune
-for (var i = 0; i < reponses.length; i++) {
-    reponses[i].addEventListener("click", function () {
-        var selectedAnswer = this.getAttribute("data-reponse");
-
-        // Vérifier si la réponse sélectionnée est correcte ou incorrecte
-        if (selectedAnswer === "bonne") {
-            this.classList.add("reponse-correcte");
-        } else {
-            this.classList.add("reponse-incorrecte");
-        }
-    });
-}
-
 document.querySelectorAll(".etoile-coupe-gauche").forEach((etoileg, index) => {
     etoileg.addEventListener("click", () => {
         etoileg.classList.toggle("etoile-coupe-gauche-active");
@@ -42,6 +26,33 @@ document.querySelectorAll(".etoile-coupe-gauche").forEach((etoileg, index) => {
     });
 });
 
+// Récupérer les éléments de réponse
+const reponses = document.querySelectorAll('.reponse');
 
+// Ajouter un écouteur d'événement à chaque réponse
+reponses.forEach(reponse => {
+    reponse.addEventListener('click', function () {
+        const reponseSelectionnee = this;
+        const estBonneReponse = reponseSelectionnee.classList.contains('bonne');
 
+        // Modifier les classes en fonction de la réponse sélectionnée
+        reponses.forEach(reponse => {
+            if (reponse === reponseSelectionnee) {
+                if (estBonneReponse) {
+                    reponse.classList.add('gg-question');
+                    question.classList.remove("question-active");
+                } else {
+                    reponse.classList.add('fausse');
+                }
+            }
+        });
 
+        // Afficher un message en fonction de la réponse sélectionnée
+        const pop = document.getElementById('pop');
+        if (estBonneReponse) {
+            pop.innerText = 'Bonne réponse !';
+        } else {
+            pop.innerText = 'Mauvaise réponse !';
+        }
+    });
+});
